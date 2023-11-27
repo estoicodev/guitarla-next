@@ -1,6 +1,6 @@
 export const getCourse = async () => {
   try {
-    const response =  await fetch(`${process.env.API_URL}/api/curso?populate=image`, {
+    const response =  await fetch(`${process.env.API_URL}/curso?populate=image`, {
       cache: 'no-store'
     })
     const { data } = await response.json();

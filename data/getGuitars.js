@@ -1,6 +1,6 @@
 export const getGuitars = async () => {
   try {
-    const response =  await fetch(`${process.env.API_URL}/api/guitars?populate=image`, {
+    const response =  await fetch(`${process.env.API_URL}/guitars?populate=image`, {
       cache: 'no-store'
     })
     const { data } = await response.json()
@@ -14,7 +14,7 @@ export const getGuitars = async () => {
 
 export const getSingleGuitar = async (url) => {
   try {
-    const apiUrl = `http://localhost:1337/api/guitars?filters[url]=${url}&populate=image`
+    const apiUrl = `${process.env.API_URL}/guitars?filters[url]=${url}&populate=image`
     const response =  await fetch(apiUrl)
     const { data } = await response.json()
   
