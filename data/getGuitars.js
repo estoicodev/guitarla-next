@@ -14,8 +14,7 @@ export const getGuitars = async () => {
 
 export const getSingleGuitar = async (url) => {
   try {
-    const apiUrl = `${process.env.API_URL}/guitars?filters[url]=${url}&populate=image`
-    const response =  await fetch(apiUrl)
+    const response =  await fetch(`https://guitarla-strapi-x7y6.onrender.com/api/guitars?filters[url]=${url}&populate=image`)
     const { data } = await response.json()
   
     return data
